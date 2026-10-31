@@ -43,7 +43,7 @@ The repo is public, so the image pulls anonymously — no login needed on the ne
 
 ```bash
 docker pull ghcr.io/chewcorp/hermes-docker:latest
-docker pull ghcr.io/chewcorp/hermes-docker:v0.21.0   # immutable release tag
+docker pull ghcr.io/xchewtoyx/hermes-docker:v0.21.0   # immutable release tag
 ```
 
 ## Base image pin
@@ -51,9 +51,13 @@ docker pull ghcr.io/chewcorp/hermes-docker:v0.21.0   # immutable release tag
 `Dockerfile` builds `FROM nousresearch/hermes-agent:v2026.8.31` (Hermes Agent
 **v0.21.0**, which ships Bot Mode / `hermes peer`). Default-branch builds
 publish `:latest` and `sha-*` only. Immutable GHCR tags come from git tags
-(`v*`): after merging a base-image bump, `git tag v0.21.0 && git push origin
-v0.21.0` publishes `ghcr.io/chewcorp/hermes-docker:v0.21.0` and
-`hermes-docker-gui:v0.21.0`. Do not retag `v0.21.0` from later main commits.
+(`v*`): after merging a base-image bump, create and push a new version tag
+to publish that release under `ghcr.io/chewcorp/` for both images. Do not retag `v0.21.0` from later main commits.
+
+The existing `v0.21.0` release predates the repository transfer and remains at
+`ghcr.io/xchewtoyx/hermes-docker:v0.21.0` and
+`ghcr.io/xchewtoyx/hermes-docker-gui:v0.21.0`. The transfer does not copy those
+release tags to `chewcorp`; new releases publish under `chewcorp`.
 
 ## Existing installation / migration
 
