@@ -55,7 +55,7 @@ jobs:
         uses: docker/metadata-action@v6
         with:
           images: |
-            ghcr.io/xchewtoyx/${{ matrix.image }}
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}
             name=xchewtoyx/${{ matrix.image }},enable=${{ vars.DOCKERHUB_ENABLED == 'true' }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}

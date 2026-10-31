@@ -4,8 +4,8 @@ Two images derived from the official `nousresearch/hermes-agent` distribution:
 
 | Image | Purpose |
 | --- | --- |
-| `ghcr.io/xchewtoyx/hermes-docker` | Headless Hermes plus shared developer tooling |
-| `ghcr.io/xchewtoyx/hermes-docker-gui` | XFCE/Xvfb desktop, Chromium, Cua Driver, and a local noVNC viewer |
+| `ghcr.io/chewcorp/hermes-docker` | Headless Hermes plus shared developer tooling |
+| `ghcr.io/chewcorp/hermes-docker-gui` | XFCE/Xvfb desktop, Chromium, Cua Driver, and a local noVNC viewer |
 
 Both are published as native `linux/amd64` and `linux/arm64` images, so Docker
 selects the x86 Linux or Apple Silicon variant automatically. GitHub Actions
@@ -19,7 +19,7 @@ with **s6-overlay** (auto-restart on crash, rotated logs). Docker's
 ## Pull / run
 
 ```bash
-git clone https://github.com/xchewtoyx/hermes-docker.git
+git clone https://github.com/chewcorp/hermes-docker.git
 cd hermes-docker
 # Edit hermes.env: set dashboard basic-auth password/secret and your timezone.
 docker compose pull
@@ -42,8 +42,8 @@ Hermes state volume and start over.
 The repo is public, so the image pulls anonymously — no login needed on the new host:
 
 ```bash
-docker pull ghcr.io/xchewtoyx/hermes-docker:latest
-docker pull ghcr.io/xchewtoyx/hermes-docker:v0.21.0   # immutable release tag
+docker pull ghcr.io/chewcorp/hermes-docker:latest
+docker pull ghcr.io/chewcorp/hermes-docker:v0.21.0   # immutable release tag
 ```
 
 ## Base image pin
@@ -52,7 +52,7 @@ docker pull ghcr.io/xchewtoyx/hermes-docker:v0.21.0   # immutable release tag
 **v0.21.0**, which ships Bot Mode / `hermes peer`). Default-branch builds
 publish `:latest` and `sha-*` only. Immutable GHCR tags come from git tags
 (`v*`): after merging a base-image bump, `git tag v0.21.0 && git push origin
-v0.21.0` publishes `ghcr.io/xchewtoyx/hermes-docker:v0.21.0` and
+v0.21.0` publishes `ghcr.io/chewcorp/hermes-docker:v0.21.0` and
 `hermes-docker-gui:v0.21.0`. Do not retag `v0.21.0` from later main commits.
 
 ## Existing installation / migration
