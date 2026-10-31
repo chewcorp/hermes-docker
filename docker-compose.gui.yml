@@ -3,7 +3,7 @@
 
 services:
   hermes:
-    image: ghcr.io/xchewtoyx/hermes-docker-gui:latest
+    image: ghcr.io/chewcorp/hermes-docker-gui:latest
     build:
       context: .
       target: gui

@@ -17,7 +17,7 @@
 
 services:
   hermes:
-    image: ghcr.io/xchewtoyx/hermes-docker:latest
+    image: ghcr.io/chewcorp/hermes-docker:latest
     build:
       context: .               # optional local build override
       target: headless
